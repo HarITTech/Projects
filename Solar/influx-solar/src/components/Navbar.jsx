@@ -9,7 +9,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="gradient-bg sticky top-0 z-50 shadow-lg py-4">
+    <nav className="gradient-bg sticky top-0  shadow-lg py-4 z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
