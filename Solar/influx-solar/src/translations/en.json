@@ -1,0 +1,69 @@
+{
+    "navbar": {
+      "home": "Home",
+      "services": "Services",
+      "projects": "Projects",
+      "about": "About Us",
+      "contact": "Contact Us"
+    },
+    "home": {
+      "heroTitle": "Solar Energy for Your Home & Business",
+      "getQuote": "Get a Quote",
+      "stats": {
+        "happyCustomers": "500+ Happy Customers",
+        "commercialInstallations": "50+ Commercial Installations",
+        "residentialInstallations": "450+ Residential Installations"
+      },
+      "brands": "Trusted Brands",
+      "about": "About Influx Solar",
+      "aboutText": "Influx Solar has been providing sustainable solar energy solutions since 2021. Based in Wardha, Maharashtra, we are committed to delivering high-quality solar installations for homes and businesses."
+    },
+    "services": {
+      "title": "Our Services",
+      "residential": "Residential Installation",
+      "commercial": "Commercial Installation",
+      "subsidies": "Subsidies Available",
+      "subsidyDetails": [
+        "On-grid solar panels: Clean, affordable, and efficient.",
+        "Maharashtra State Electricity Distribution Company (MSEB) approved on-grid system.",
+        "Free net metering and one-night warranty.",
+        "No need to pay electricity bills, save up to 90%.",
+        "2% interest on electricity bills.",
+        "Solar panels come with a 24 to 30-year warranty."
+      ]
+    },
+    "projects": {
+      "title": "Our Projects",
+      "project1": "5 KW Residential, Nagpur",
+      "project2": "7 KW Commercial, Wardha"
+    },
+    "about": {
+      "title": "About Us",
+      "mission": "Our mission is to provide sustainable solar energy solutions for homes and businesses.",
+      "whyChooseUs": "Why Choose Us?",
+      "whyChooseUsText": "We offer expertise, trusted brands, and a commitment to customer satisfaction.",
+      "directors": "Our Directors",
+      "director1": "Er. Shankar Dandekar: 9890888138",
+      "director2": "Er. Kishor Dhore: 8007685547"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "address": "Address",
+        "installationType": "Type of Installation",
+        "residential": "Residential",
+        "commercial": "Commercial",
+        "message": "Message",
+        "submit": "Submit"
+      },
+      "address": "Head Office: Near Bus Stop, Seloo, Th. Seloo, Dist. Wardha – 442104",
+      "whatsapp": "Chat with Us on WhatsApp"
+    },
+    "footer": {
+      "quickLinks": "Quick Links",
+      "contact": "Contact Info"
+    }
+  }
