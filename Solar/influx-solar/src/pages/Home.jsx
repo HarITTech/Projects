@@ -7,8 +7,14 @@ import bg1 from '../assets/images/hero-bg1.jpg';
 import bg2 from '../assets/images/hero-bg2.jpg';
 import bg3 from '../assets/images/hero-bg3.jpg';
 import adani from '../assets/images/adani-logo.png';
-import waaree from '../assets/images/waaree-logo.png';
-import polycab from '../assets/images/polycab-logo.png';
+import waree from '../assets/images/waaree-logo.png';
+import poly from '../assets/images/polycab-logo.png';
+import Hero from '../components/Hero';
+import Mission from '../components/Mission';
+import Features from '../components/Features';
+import Custumer from '../components/Custumer';
+import Team from '../components/Team';
+import Contact from '../components/Contact';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -79,7 +85,7 @@ const Home = () => {
   return (
     <div className="bg-lightGray">
       {/* Hero Section with Auto-Sliding Carousel */}
-      <section className="relative h-[70vh] sm:h-[80vh] md:h-[90vh] lg:h-[100vh] w-full">
+      {/* <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] w-full">
         {!imagesLoaded ? (
           <div className="h-[70vh] sm:h-[80vh] md:h-[90vh] lg:h-[100vh] flex items-center justify-center bg-gray-200">
             <p className="text-darkGray text-lg font-semibold animate-pulse">Loading...</p>
@@ -92,10 +98,10 @@ const Home = () => {
                   className="h-[70vh] sm:h-[80vh] md:h-[90vh] lg:h-[100vh] w-full bg-cover bg-center relative"
                   style={{ backgroundImage: `url(${image.src})` }}
                 >
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-transparent"></div>
-                  {/* Content */}
-                  <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+                 
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent"></div>
+               
+                  <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
                     <div className="text-center text-white animate-fadeIn">
                       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4 sm:mb-6 leading-tight drop-shadow-2xl tracking-tight">
                         {t('home.heroTitle')}
@@ -117,7 +123,11 @@ const Home = () => {
             ))}
           </Slider>
         )}
-      </section>
+      </section> */}
+      <Hero/>
+      <Mission/>
+      <Features/>
+
 
       {/* Stats Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-white">
@@ -227,6 +237,9 @@ const Home = () => {
         </div>
       </section>
 
+      <Custumer/>
+      <Team/>
+
       {/* About Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-lightGray">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -267,6 +280,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
+      <Contact/>
     </div>
   );
 };
