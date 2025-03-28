@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaSolarPanel, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import pro1 from '../assets/images/project1.jpg';
 import pro2 from '../assets/images/project2.jpg';
-import pro3 from '../assets/images/project2.jpg';
-import pro4 from '../assets/images/project1.jpg';
-import pro5 from '../assets/images/project2.jpg';
-import pro6 from '../assets/images/project1.jpg';
-import { Link } from 'react-router-dom';
+import pro3 from '../assets/images/project3.jpg';
+import pro4 from '../assets/images/project4.jpg';
+import pro5 from '../assets/images/project5.jpg';
+import pro6 from '../assets/images/project6.jpg';
+import pro7 from '../assets/images/project7.jpg';
+import pro8 from '../assets/images/project8.jpg';
 
 const Projects = () => {
   const { t } = useTranslation();
-  const [visibleProjects, setVisibleProjects] = useState(6); // Initially show 6 projects
-  const [selectedCategory, setSelectedCategory] = useState('All'); // Category filter state
+  const [visibleProjects, setVisibleProjects] = useState(6);
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
-  // Array of projects with categories and details
+  // Array of projects with detailed data
   const allProjects = [
     {
       id: 1,
@@ -22,6 +24,12 @@ const Projects = () => {
       title: t('projects.project1'),
       category: 'Residential',
       description: 'A state-of-the-art solar installation for a modern family home, reducing energy costs by 80%.',
+      date: '2023-05-15',
+      time: '14:30',
+      location: 'San Francisco, CA',
+      capacity: '5 kW',
+      energySavings: '80%',
+      client: 'Smith Family',
     },
     {
       id: 2,
@@ -29,6 +37,12 @@ const Projects = () => {
       title: t('projects.project2'),
       category: 'Commercial',
       description: 'Solar panels installed for a corporate office, powering daily operations sustainably.',
+      date: '2023-07-22',
+      time: '09:00',
+      location: 'New York, NY',
+      capacity: '20 kW',
+      energySavings: '65%',
+      client: 'TechCorp Inc.',
     },
     {
       id: 3,
@@ -36,6 +50,12 @@ const Projects = () => {
       title: 'Green Villa Solar System',
       category: 'Residential',
       description: 'A 5kW solar system for a luxury villa, providing clean energy for all household needs.',
+      date: '2023-09-10',
+      time: '11:00',
+      location: 'Miami, FL',
+      capacity: '5 kW',
+      energySavings: '75%',
+      client: 'Johnson Family',
     },
     {
       id: 4,
@@ -43,6 +63,12 @@ const Projects = () => {
       title: 'Eco Factory Power Plant',
       category: 'Commercial',
       description: 'A large-scale solar plant for a factory, cutting down on operational costs significantly.',
+      date: '2023-11-05',
+      time: '08:30',
+      location: 'Chicago, IL',
+      capacity: '50 kW',
+      energySavings: '90%',
+      client: 'Eco Industries',
     },
     {
       id: 5,
@@ -50,6 +76,12 @@ const Projects = () => {
       title: 'Sunny Heights Apartments',
       category: 'Residential',
       description: 'Solar solutions for a multi-family apartment complex, promoting green living.',
+      date: '2024-01-20',
+      time: '13:00',
+      location: 'Los Angeles, CA',
+      capacity: '15 kW',
+      energySavings: '70%',
+      client: 'Sunny Heights HOA',
     },
     {
       id: 6,
@@ -57,21 +89,38 @@ const Projects = () => {
       title: 'Tech Park Solar Grid',
       category: 'Commercial',
       description: 'A solar grid for a tech park, ensuring uninterrupted power for multiple businesses.',
+      date: '2024-03-12',
+      time: '10:00',
+      location: 'Austin, TX',
+      capacity: '30 kW',
+      energySavings: '85%',
+      client: 'Tech Park Management',
     },
-    // Add more projects as needed
     {
       id: 7,
-      image: pro1,
+      image: pro7,
       title: 'Mountain Retreat Solar',
       category: 'Residential',
       description: 'Off-grid solar system for a remote mountain retreat, fully self-sustaining.',
+      date: '2024-05-18',
+      time: '15:00',
+      location: 'Denver, CO',
+      capacity: '3 kW',
+      energySavings: '100%',
+      client: 'Brown Family',
     },
     {
       id: 8,
-      image: pro2,
+      image: pro8,
       title: 'Retail Store Solar Fit',
       category: 'Commercial',
       description: 'Solar installation for a retail store, reducing electricity bills by 70%.',
+      date: '2024-07-25',
+      time: '12:00',
+      location: 'Seattle, WA',
+      capacity: '10 kW',
+      energySavings: '70%',
+      client: 'Green Retail Co.',
     },
   ];
 
@@ -86,7 +135,7 @@ const Projects = () => {
 
   // Handle "Load More" button
   const handleLoadMore = () => {
-    setVisibleProjects((prev) => prev + 3); // Load 3 more projects
+    setVisibleProjects((prev) => prev + 3);
   };
 
   return (

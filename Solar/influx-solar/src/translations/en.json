@@ -1,8 +1,8 @@
 {
     "navbar": {
       "home": "Home",
-      "services": "Services",
-      "projects": "Projects",
+      "services": "Our Services",
+      "projects": "Our Projects",
       "about": "About Us",
       "contact": "Contact Us"
     },

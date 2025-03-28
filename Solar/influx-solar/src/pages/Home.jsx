@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
-import { FaArrowRight, FaUsers, FaSolarPanel, FaMoneyBillWave, FaPhoneAlt, FaBolt } from 'react-icons/fa';
+import { FaArrowRight, FaUsers, FaSolarPanel, FaMoneyBillWave, FaPhoneAlt, FaBolt, FaHome, FaBuilding } from 'react-icons/fa';
 import bg1 from '../assets/images/hero-bg1.jpg';
 import bg2 from '../assets/images/hero-bg2.jpg';
 import bg3 from '../assets/images/hero-bg3.jpg';
@@ -15,6 +15,7 @@ import Features from '../components/Features';
 import Custumer from '../components/Custumer';
 import Team from '../components/Team';
 import Contact from '../components/Contact';
+import InstallationProcess from '../components/InstallationProcess';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -25,6 +26,34 @@ const Home = () => {
     { id: 1, src: bg1, caption: 'Powering the Future with Solar Energy' },
     { id: 2, src: bg2, caption: 'Sustainable Solutions for Every Home' },
     { id: 3, src: bg3, caption: 'Empowering Businesses with Clean Energy' },
+  ];
+
+  const processSteps = [
+    {
+      step: 'Consultation',
+      description: 'We assess your energy needs and site conditions to determine the best solar solution.',
+      image: 'https://plus.unsplash.com/premium_photo-1661908759956-93c29efea72b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+      step: 'Design',
+      description: 'Our team creates a custom solar system design tailored to your property and energy goals.',
+      image: 'https://plus.unsplash.com/premium_photo-1716999684705-2c648f62a8fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+      step: 'Installation',
+      description: 'Professional installation with minimal disruption, ensuring safety and quality at every step.',
+      image: 'https://images.unsplash.com/photo-1624397640148-949b1732bb0a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+      step: 'Activation',
+      description: 'We connect and test your system to ensure it’s running at optimal performance.',
+      image: 'https://plus.unsplash.com/premium_photo-1716932156898-9b7bccacfb22?q=80&w=2014&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+      step: 'Support',
+      description: 'Ongoing maintenance and support to keep your solar system performing at its best.',
+      image: 'https://plus.unsplash.com/premium_photo-1716824502184-f5f8816ed2ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
   ];
 
   // Preload images to ensure they load properly
@@ -130,46 +159,95 @@ const Home = () => {
 
 
       {/* Stats Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primaryBlue text-center mb-8 sm:mb-12 md:mb-16">
-            Our Impact
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-            <div className="p-6 sm:p-8 bg-gradient-to-br from-lightGray to-white rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300 text-center">
-              <FaUsers className="text-3xl sm:text-4xl md:text-5xl text-secondaryGreen mx-auto mb-4 sm:mb-6 animate-bounce" />
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primaryBlue mb-2 sm:mb-4">
-                {t('home.stats.happyCustomers')}
-              </h3>
-              <p className="text-darkGray text-sm sm:text-base md:text-lg">
-                Satisfied clients across the region
-              </p>
-            </div>
-            <div className="p-6 sm:p-8 bg-gradient-to-br from-lightGray to-white rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300 text-center">
-              <FaSolarPanel className="text-3xl sm:text-4xl md:text-5xl text-secondaryGreen mx-auto mb-4 sm:mb-6 animate-bounce" />
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primaryBlue mb-2 sm:mb-4">
-                {t('home.stats.commercialInstallations')}
-              </h3>
-              <p className="text-darkGray text-sm sm:text-base md:text-lg">
-                Powering businesses with solar energy
-              </p>
-            </div>
-            <div className="p-6 sm:p-8 bg-gradient-to-br from-lightGray to-white rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300 text-center">
-              <FaSolarPanel className="text-3xl sm:text-4xl md:text-5xl text-secondaryGreen mx-auto mb-4 sm:mb-6 animate-bounce" />
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primaryBlue mb-2 sm:mb-4">
-                {t('home.stats.residentialInstallations')}
-              </h3>
-              <p className="text-darkGray text-sm sm:text-base md:text-lg">
-                Bringing solar to homes everywhere
-              </p>
-            </div>
+      <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+  {/* Decorative elements */}
+  <div className="absolute top-0 left-0 w-full h-full opacity-10">
+    <div className="absolute top-1/4 -left-20 w-60 h-60 rounded-full bg-primaryBlue/20 filter blur-3xl"></div>
+    <div className="absolute bottom-1/3 -right-20 w-80 h-80 rounded-full bg-secondaryGreen/20 filter blur-3xl"></div>
+  </div>
+
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    {/* Section Header */}
+    <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 lg:mb-20">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primaryBlue mb-4">
+        Our <span className="text-secondaryGreen">Impact</span>
+      </h2>
+      <p className="text-lg md:text-xl text-darkGray/90">
+        Transforming energy consumption with sustainable solar solutions
+      </p>
+    </div>
+
+    {/* Stats Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+      {/* Happy Customers */}
+      <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primaryBlue/5 to-secondaryGreen/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="p-8 md:p-10 relative z-10">
+          <div className="w-16 h-16 md:w-20 md:h-20 bg-secondaryGreen/10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-secondaryGreen/20 transition-colors duration-500">
+            <FaUsers className="text-3xl md:text-4xl text-secondaryGreen group-hover:scale-110 transition-transform duration-500" />
           </div>
+          <h3 className="text-4xl md:text-5xl font-extrabold text-primaryBlue text-center mb-3">
+            500+
+          </h3>
+          <p className="text-xl md:text-2xl font-semibold text-center text-primaryBlue mb-2">
+            Happy Customers
+          </p>
+          <p className="text-gray-600 text-center text-sm md:text-base">
+            Satisfied clients across the region enjoying clean energy
+          </p>
         </div>
-      </section>
+      </div>
+
+      {/* Commercial Installations */}
+      <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primaryBlue/5 to-secondaryGreen/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="p-8 md:p-10 relative z-10">
+          <div className="w-16 h-16 md:w-20 md:h-20 bg-secondaryGreen/10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-secondaryGreen/20 transition-colors duration-500">
+            <FaBuilding className="text-3xl md:text-4xl text-secondaryGreen group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <h3 className="text-4xl md:text-5xl font-extrabold text-primaryBlue text-center mb-3">
+            250+
+          </h3>
+          <p className="text-xl md:text-2xl font-semibold text-center text-primaryBlue mb-2">
+            Commercial Installations
+          </p>
+          <p className="text-gray-600 text-center text-sm md:text-base">
+            Powering businesses with reliable solar energy solutions
+          </p>
+        </div>
+      </div>
+
+      {/* Residential Installations */}
+      <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primaryBlue/5 to-secondaryGreen/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="p-8 md:p-10 relative z-10">
+          <div className="w-16 h-16 md:w-20 md:h-20 bg-secondaryGreen/10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-secondaryGreen/20 transition-colors duration-500">
+            <FaHome className="text-3xl md:text-4xl text-secondaryGreen group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <h3 className="text-4xl md:text-5xl font-extrabold text-primaryBlue text-center mb-3">
+            1000+
+          </h3>
+          <p className="text-xl md:text-2xl font-semibold text-center text-primaryBlue mb-2">
+            Residential Installations
+          </p>
+          <p className="text-gray-600 text-center text-sm md:text-base">
+            Bringing solar energy to homes across the country
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* Animated decorative elements */}
+    <div className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-primaryBlue/5 filter blur-3xl animate-[pulse_8s_infinite]"></div>
+    <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-secondaryGreen/5 filter blur-3xl animate-[pulse_10s_infinite]"></div>
+  </div>
+</section>
+
+      <InstallationProcess steps={processSteps} />
 
       {/* Why Choose Us Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-lightGray">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primaryBlue text-center mb-8 sm:mb-12 md:mb-16">
             Why Choose Influx Solar?
           </h2>
@@ -212,74 +290,106 @@ const Home = () => {
       </section>
 
       {/* Trusted Brands Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primaryBlue mb-8 sm:mb-12 md:mb-16">
-            {t('home.brands')}
-          </h2>
-          <div className="flex flex-wrap justify-center gap-8 sm:gap-10 md:gap-12 lg:gap-16">
-            <img
-              src={adani}
-              alt="Adani"
-              className="h-14 sm:h-16 md:h-20 lg:h-24 transform hover:scale-110 transition-transform duration-300"
-            />
-            <img
-              src={waaree}
-              alt="Waaree"
-              className="h-14 sm:h-16 md:h-20 lg:h-24 transform hover:scale-110 transition-transform duration-300"
-            />
-            <img
-              src={polycab}
-              alt="Polycab"
-              className="h-14 sm:h-16 md:h-20 lg:h-24 transform hover:scale-110 transition-transform duration-300"
-            />
-          </div>
+      <section className="py-16 bg-gray-50 overflow-hidden">
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-14">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primaryBlue">
+        {t('home.brands')}
+      </h2>
+      <div className="w-20 h-1 bg-primaryBlue mx-auto mt-4"></div>
+    </div>
+
+    <div className="relative">
+      {/* Gradient overlays for better UX */}
+      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
+      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
+
+      {/* Infinite sliding animation */}
+      <div className="flex items-center overflow-hidden">
+        <div className="flex animate-infinite-scroll space-x-16 px-4">
+          {[adani, waree, poly, adani, waree, poly].map((brand, index) => (
+            <div 
+              key={index} 
+              className="flex-shrink-0 flex items-center justify-center"
+            >
+              <img
+                src={brand}
+                alt={`Brand ${index}`}
+                className="h-16 md:h-20 lg:h-24 object-contain grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105"
+              />
+            </div>
+          ))}
         </div>
-      </section>
+        {/* Duplicate for seamless looping */}
+        <div className="flex animate-infinite-scroll space-x-16 px-4">
+          {[adani, waree, poly, adani, waree, poly].map((brand, index) => (
+            <div 
+              key={`dup-${index}`} 
+              className="flex-shrink-0 flex items-center justify-center"
+            >
+              <img
+                src={brand}
+                alt={`Brand ${index}`}
+                className="h-16 md:h-20 lg:h-24 object-contain grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <Custumer/>
       <Team/>
 
-      {/* About Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-lightGray">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primaryBlue mb-6 sm:mb-8 md:mb-12">
-            {t('home.about')}
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-darkGray max-w-[90%] sm:max-w-[80%] md:max-w-3xl lg:max-w-4xl mx-auto mb-6 sm:mb-8 md:mb-10">
-            {t('home.aboutText')}
-          </p>
+      <section className="relative py-20 bg-gradient-to-br from-gray-50 to-lightGray overflow-hidden">
+  {/* Decorative elements */}
+  <div className="absolute top-0 left-0 w-full h-full opacity-5">
+    <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-primaryBlue mix-blend-multiply filter blur-3xl"></div>
+    <div className="absolute bottom-10 right-20 w-60 h-60 rounded-full bg-secondaryGreen mix-blend-multiply filter blur-3xl"></div>
+  </div>
+
+  <div className="container mx-auto px-6 relative z-10">
+    <div className="text-center max-w-4xl mx-auto">
+      {/* Section heading with animated underline */}
+      <div className="inline-block mb-12">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primaryBlue mb-4">
+          {t('home.about')}
+        </h2>
+        <div className="relative w-3/4 mx-auto">
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primaryBlue to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-0 h-1 bg-secondaryGreen animate-underline-expand"></div>
+        </div>
+      </div>
+
+      {/* Content with staggered animation */}
+      <div className="mb-14">
+        <p className="text-lg sm:text-xl md:text-2xl text-darkGray leading-relaxed mb-8 animate-fade-in-up">
+          {t('home.aboutText')}
+        </p>
+        <div className="animate-fade-in-up delay-100">
           <Link
             to="/about"
-            className="inline-flex items-center space-x-2 sm:space-x-3 bg-primaryBlue text-white py-3 px-6 sm:py-4 sm:px-8 rounded-full text-sm sm:text-base md:text-lg lg:text-xl font-semibold hover:bg-secondaryGreen transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-primaryBlue to-secondaryGreen text-white py-4 px-8 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 group"
           >
-            <span>Learn More</span>
-            <FaArrowRight />
+            <span className="relative overflow-hidden">
+              <span className="block group-hover:-translate-y-full transition-transform duration-300">
+                Learn More
+              </span>
+              <span className="absolute top-0 left-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 w-full">
+                Discover More
+              </span>
+            </span>
+            <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Call to Action Banner */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r bg-green-400 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex justify-center mb-6 sm:mb-8 md:mb-10">
-            <FaBolt className="text-4xl sm:text-5xl md:text-6xl animate-pulse" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8">
-            Ready to Go Solar?
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 md:mb-10 max-w-[90%] sm:max-w-[80%] md:max-w-3xl lg:max-w-4xl mx-auto">
-            Contact us today to get a free quote and start saving with solar energy!
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center space-x-2 sm:space-x-3 bg-accentYellow text-darkGray py-3 px-6 sm:py-4 sm:px-8 rounded-full text-sm sm:text-base md:text-lg lg:text-xl font-semibold hover:bg-white hover:text-primaryBlue transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-          >
-            <FaPhoneAlt />
-            <span>{t('home.getQuote')}</span>
-          </Link>
-        </div>
-      </section>
+   
       <Contact/>
     </div>
   );
