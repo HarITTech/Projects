@@ -1,8 +1,10 @@
-// src/components/InstallationProcess.jsx
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaSolarPanel } from 'react-icons/fa';
 
-const InstallationProcess = ({ steps, title = "Our Solar Installation Process" }) => {
+const InstallationProcess = ({ steps, title }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="relative py-12 sm:py-16 md:py-20 rounded-2xl shadow-xl mb-12 sm:mb-16 md:mb-20 overflow-hidden">
       {/* Background with Gradient and Overlay */}
@@ -18,7 +20,8 @@ const InstallationProcess = ({ steps, title = "Our Solar Installation Process" }
       <div className="relative z-10 text-white">
         {/* Section Title */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center mb-8 sm:mb-12 md:mb-16 flex items-center justify-center space-x-3">
-         <span>{title}</span>
+          <FaSolarPanel className="text-accentYellow text-3xl sm:text-4xl md:text-5xl animate-pulse" />
+          <span>{title || t('services.processTitle')}</span>
         </h2>
 
         {/* Timeline Line (Visible on Desktop) */}
@@ -37,12 +40,12 @@ const InstallationProcess = ({ steps, title = "Our Solar Installation Process" }
               <div className="relative w-full h-32 sm:h-40 md:h-48 rounded-lg overflow-hidden mb-4 sm:mb-6">
                 <img
                   src={step.image}
-                  alt={step.step}
+                  alt={t(`services.processSteps.${step.step.toLowerCase()}`)}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3 sm:p-4">
                   <h3 className="text-white text-base sm:text-lg md:text-xl font-semibold">
-                    {step.step}
+                    {t(`services.processSteps.${step.step.toLowerCase()}`)}
                   </h3>
                 </div>
               </div>
@@ -54,7 +57,7 @@ const InstallationProcess = ({ steps, title = "Our Solar Installation Process" }
 
               {/* Step Description */}
               <p className="text-sm sm:text-base md:text-lg opacity-90">
-                {step.description}
+                {t(`services.processDescriptions.${step.step.toLowerCase()}`)}
               </p>
 
               {/* Timeline Dot (Visible on Desktop) */}

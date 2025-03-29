@@ -1,69 +1,163 @@
 {
-    "navbar": {
-      "home": "Home",
-      "services": "Our Services",
-      "projects": "Our Projects",
-      "about": "About Us",
-      "contact": "Contact Us"
+  "navbar": {
+    "home": "Home",
+    "services": "Our Services",
+    "projects": "Our Projects",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "home": {
+    "heroTitle": "Solar Energy for Your Home & Business",
+    "getQuote": "Get a Quote",
+    "stats": {
+      "happyCustomers": "500+ Happy Customers",
+      "commercialInstallations": "50+ Commercial Installations",
+      "residentialInstallations": "450+ Residential Installations"
     },
-    "home": {
-      "heroTitle": "Solar Energy for Your Home & Business",
-      "getQuote": "Get a Quote",
-      "stats": {
-        "happyCustomers": "500+ Happy Customers",
-        "commercialInstallations": "50+ Commercial Installations",
-        "residentialInstallations": "450+ Residential Installations"
-      },
-      "brands": "Trusted Brands",
-      "about": "About Influx Solar",
-      "aboutText": "Influx Solar has been providing sustainable solar energy solutions since 2021. Based in Wardha, Maharashtra, we are committed to delivering high-quality solar installations for homes and businesses."
+    "brands": "Trusted Brands",
+    "about": "About Influx Solar",
+    "aboutText": "Influx Solar has been providing sustainable solar energy solutions since 2021. Based in Wardha, Maharashtra, we are committed to delivering high-quality solar installations for homes and businesses."
+  },
+  "services": {
+    "title": "Our Services",
+    "residential": "Residential Installation",
+    "commercial": "Commercial Installation",
+    "subsidies": "Subsidies Available",
+    "subsidyDetails": [
+      "On-grid solar panels: Clean, affordable, and efficient.",
+      "Maharashtra State Electricity Distribution Company (MSEB) approved on-grid system.",
+      "Free net metering and one-night warranty.",
+      "No need to pay electricity bills, save up to 90%.",
+      "2% interest on electricity bills.",
+      "Solar panels come with a 24 to 30-year warranty."
+    ],
+    "weProvide": "We Provide",
+    "maintenanceSupport": "Maintenance and Support",
+    "solarConsultation": "Solar Consultation",
+    "offGridSolutions": "Off-Grid Solutions",
+    "processTitle": "Our Solar Installation Process",
+    "processSteps": {
+      "consultation": "Consultation",
+      "design": "Design",
+      "installation": "Installation",
+      "activation": "Activation",
+      "support": "Support"
     },
-    "services": {
-      "title": "Our Services",
-      "residential": "Residential Installation",
-      "commercial": "Commercial Installation",
-      "subsidies": "Subsidies Available",
-      "subsidyDetails": [
-        "On-grid solar panels: Clean, affordable, and efficient.",
-        "Maharashtra State Electricity Distribution Company (MSEB) approved on-grid system.",
-        "Free net metering and one-night warranty.",
-        "No need to pay electricity bills, save up to 90%.",
-        "2% interest on electricity bills.",
-        "Solar panels come with a 24 to 30-year warranty."
-      ]
+    "processDescriptions": {
+      "consultation": "We assess your energy needs and site conditions to determine the best solar solution.",
+      "design": "Our team designs a custom solar system tailored to your property and energy goals.",
+      "installation": "Professional installation with minimal disruption, ensuring safety and quality at every step.",
+      "activation": "We connect and test your system to ensure it's running at optimal performance.",
+      "support": "Ongoing maintenance and support to keep your solar system performing at its best."
     },
-    "projects": {
-      "title": "Our Projects",
-      "project1": "5 KW Residential, Nagpur",
-      "project2": "7 KW Commercial, Wardha"
+    "faqTitle": "Frequently Asked Questions",
+    "faqs": {
+      "installationTime": "How long does solar installation take?",
+      "installationTimeAnswer": "A typical residential installation takes 1-3 days depending on system size and complexity.",
+      "panelLifespan": "What is the lifespan of solar panels?",
+      "panelLifespanAnswer": "Most solar panels have a lifespan of 25-30 years with equivalent warranty coverage.",
+      "subsidiesAvailable": "Are there any government subsidies available?",
+      "subsidiesAvailableAnswer": "Yes, many areas offer subsidies and tax incentives for solar installation. We can guide you through these options."
     },
-    "about": {
-      "title": "About Us",
-      "mission": "Our mission is to provide sustainable solar energy solutions for homes and businesses.",
-      "whyChooseUs": "Why Choose Us?",
-      "whyChooseUsText": "We offer expertise, trusted brands, and a commitment to customer satisfaction.",
-      "directors": "Our Directors",
-      "director1": "Er. Shankar Dandekar: 9890888138",
-      "director2": "Er. Kishor Dhore: 8007685547"
+    "cta": "Get Free Quote Today",
+    "exploreSubsidies": "Explore Subsidies",
+    "learnMore": "Learn More"
+  },
+  "projects": {
+    "title": "Our Projects",
+    "project1": "5 KW Residential, Nagpur",
+    "project2": "7 KW Commercial, Wardha"
+  },
+  "about": {
+    "title": "About Us",
+    "mission": "Our mission is to provide sustainable solar energy solutions for homes and businesses.",
+    "whyChooseUs": "Why Choose Us?",
+    "whyChooseUsText": "We offer expertise, trusted brands, and a commitment to customer satisfaction.",
+    "directors": "Our Directors",
+    "director1": "Er. Shankar Dandekar: 9890888138",
+    "director2": "Er. Kishor Dhore: 8007685547"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "address": "Address",
+      "installationType": "Type of Installation",
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "message": "Message",
+      "submit": "Submit"
     },
-    "contact": {
-      "title": "Contact Us",
-      "form": {
-        "name": "Name",
-        "email": "Email",
-        "phone": "Phone Number",
-        "address": "Address",
-        "installationType": "Type of Installation",
-        "residential": "Residential",
-        "commercial": "Commercial",
-        "message": "Message",
-        "submit": "Submit"
-      },
-      "address": "Head Office: Near Bus Stop, Seloo, Th. Seloo, Dist. Wardha – 442104",
-      "whatsapp": "Chat with Us on WhatsApp"
-    },
-    "footer": {
-      "quickLinks": "Quick Links",
-      "contact": "Contact Info"
-    }
+    "address": "Head Office: Near Bus Stop, Seloo, Th. Seloo, Dist. Wardha – 442104",
+    "whatsapp": "Chat with Us on WhatsApp"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contact": "Contact Info",
+    "contactUs": "Contact Us",
+    "businessHours": "Business Hours",
+    "mondayFriday": "Monday - Friday",
+    "mondayFridayHours": "9:00 AM - 6:00 PM",
+    "saturday": "Saturday",
+    "saturdayHours": "10:00 AM - 4:00 PM",
+    "sunday": "Sunday",
+    "sundayHours": "Closed",
+    "newsletter": "Newsletter",
+    "newsletterText": "Subscribe for updates and offers",
+    "emailPlaceholder": "Your Email",
+    "subscribe": "Subscribe",
+    "copyright": "© {year} Influx Solar. All Rights Reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "sitemap": "Sitemap",
+    "certifications": "Registered with MNRE | ISO 9001:2015 Certified"
+  },
+  "features": {
+    "advancedTechnology": "Advanced Technology",
+    "title": "Solar Solutions for the Modern World",
+    "description": "Our state-of-the-art solar systems integrate intelligent energy management with maximum efficiency for optimal performance in all conditions.",
+    "highEfficiency": "High Efficiency",
+    "highEfficiencyDesc": "Our premium solar panels achieve up to 22.8% efficiency with advanced monocrystalline technology.",
+    "costEffective": "Cost-Effective",
+    "costEffectiveDesc": "Reduce energy bills by up to 90% with ROI in just 3-5 years through our optimized systems.",
+    "ecoFriendly": "Eco-Friendly",
+    "ecoFriendlyDesc": "Each installation prevents 3-5 tons of CO2 emissions annually, equivalent to planting 100 trees.",
+    "warranty": "25-Year Warranty",
+    "warrantyDesc": "Industry-leading protection with performance guarantee and comprehensive coverage.",
+    "energyProduction": "Energy Production",
+    "energyProductionValue": "8-12 kW/hour"
+  },
+  "hero": {
+    "title": "Harness the Power of Solar Energy",
+    "description": "Join the renewable energy revolution with our cutting-edge solar solutions",
+    "consultationButton": "Get Free Consultation",
+    "exploreButton": "Explore Solutions"
+  },
+  "mission": {
+    "commitment": "Our Commitment",
+    "title": "Discover the Power of Solar Energy",
+    "description": "We are committed to providing sustainable energy solutions that help reduce carbon footprint and promote clean environment for future generations.",
+    "features": [
+      "High-efficiency solar panels with 25-year warranty",
+      "Cost-effective energy solutions tailored to your needs",
+      "Eco-friendly systems with carbon offset",
+      "Government-approved installations and certifications"
+    ],
+    "assessmentButton": "Get Free Assessment",
+    "technologyButton": "Our Technology",
+    "since": "Since 2010",
+    "trustedExperts": "Trusted Solar Experts"
+  },
+  "team": {
+    "title": "Our Founders",
+    "subtitle": "The pioneers behind Influx Solar's renewable energy mission",
+    "visionTitle": "Our Shared Vision",
+    "visionText": "Making sustainable solar energy accessible and affordable for every home and business in India, maximizing energy independence while reducing carbon footprint."
+  },
+  "testimonials": {
+    "title": "Customer Testimonials",
+    "subtitle": "See what our satisfied customers say about our services."
   }
+}

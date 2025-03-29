@@ -33,7 +33,7 @@ const Services = () => {
       description: 'Not sure where to start? Our expert consultants will assess your energy needs, evaluate your property, and design a custom solar solution that fits your budget and goals.',
     },
     {
-      icon: <FaSolarPanel className="text-4xl sm:text-5xl text-secondaryGreen mx-auto mb-4 sm:mb-6 animate-bounce" />,
+      icon: <FaSolarPanel className="text-4xl sm:text-5xl text-white mx-auto mb-4 sm:mb-6 animate-bounce" />,
       image: 'https://plus.unsplash.com/premium_photo-1716385892347-ebf292a9a905?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'Off-Grid Solutions',
       description: 'For remote locations, we offer off-grid solar systems with battery storage, ensuring you have reliable power even in areas without access to the grid.',
@@ -114,20 +114,19 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Title */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primaryBlue text-center mb-8 sm:mb-12 md:mb-16 flex items-center justify-center space-x-3">
-          <FaSolarPanel className="text-secondaryGreen text-4xl sm:text-5xl md:text-6xl animate-pulse" />
-          <span>{t('services.title')}</span>
+           <span>{t('services.title')}</span>
         </h1>
 
         {/* Services Section (Improved) */}
         <div className="relative py-12 sm:py-16 md:py-20 rounded-2xl shadow-xl mb-12 sm:mb-16 md:mb-20 overflow-hidden">
           {/* Background with Gradient and Overlay */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-1 bg-cover bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1509391367611-c231e3a04f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')`,
+              backgroundImage: `url('https://plus.unsplash.com/premium_photo-1663126735166-5a9817186619?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primaryBlue/90 to-secondaryGreen/90"></div>
+          <div className="absolute inset-0  bg-gradient-to-r from-primaryBlue/90 to-secondaryGreen/90"></div>
 
           {/* Content */}
           <div className="relative z-10 px-7">

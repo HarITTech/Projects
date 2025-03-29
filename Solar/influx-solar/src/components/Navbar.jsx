@@ -57,7 +57,7 @@ const Navbar = () => {
 
   const contactItems = [
     { icon: <FaPhoneAlt />, text: '9890888138', href: 'tel:9890888138' },
-    { icon: <FaWhatsapp />, text: 'Chat on WhatsApp', href: 'https://wa.me/9890888138' },
+    { icon: <FaWhatsapp />, text: t('contact.whatsapp'), href: 'https://wa.me/9890888138' },
     { icon: <FaEnvelope />, text: 'info@influxsolar.com', href: 'mailto:info@influxsolar.com' }
   ];
 
@@ -81,22 +81,22 @@ const Navbar = () => {
           <div className="flex items-center space-x-2 sm:space-x-4">
             <span className="flex items-center text-xs sm:text-sm">
               <MdSolarPower className="mr-1 text-accentYellow" />
-              MNRE Certified
+              {t('footer.certifications').split(' | ')[0]}
             </span>
-            <LanguageToggle />''
+            <LanguageToggle />
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
-      <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-gradient-to-r from-primaryBlue to-secondaryGreen shadow-xl py-1 sm:py-2' : 'bg-gradient-to-r from-primaryBlue/95 to-secondaryGreen/95 py-2 sm:py-2 z-40'}`}>
+      <nav className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? 'bg-gradient-to-r from-primaryBlue to-secondaryGreen shadow-xl py-1 sm:py-2' : 'bg-gradient-to-r from-primaryBlue/95 to-secondaryGreen/95 py-2 sm:py-2 z-30'}`}>
         <div className="container mx-auto px-2 sm:px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-1 sm:space-x-2 z-50">
+            <Link to="/" className="flex items-center space-x-1 sm:space-x-2">
               <img
                 src={logo}
-                alt="Influx Solar Logo"
+                alt={t('navbar.logoAlt') || "Influx Solar Logo"}
                 className="h-10 sm:h-14 md:h-16 object-contain"
               />
               <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Influx Solar</span>
@@ -119,7 +119,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link className="ml-2 sm:ml-4 bg-accentYellow text-primaryBlue px-3 sm:px-6 py-1 sm:py-2 rounded-full font-semibold hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base" to="/contact">
-                Free Consultation
+                { 'Free Consultation'}
               </Link>
             </div>
 
@@ -127,7 +127,7 @@ const Navbar = () => {
             <button 
               className="md:hidden text-white focus:outline-none z-50 p-2"
               onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
+              aria-label={t('navbar.toggleMenu') || "Toggle menu"}
             >
               {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
             </button>
@@ -151,7 +151,7 @@ const Navbar = () => {
               ))}
               
               <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
-                <h3 className="text-white/80 font-medium text-lg sm:text-xl">Contact Us:</h3>
+                <h3 className="text-white/80 font-medium text-lg sm:text-xl">{t('footer.contactUs')}:</h3>
                 {contactItems.map((item, index) => (
                   <a 
                     key={index} 
@@ -166,7 +166,7 @@ const Navbar = () => {
 
               <div className="mt-6 sm:mt-8">
                 <button className="w-full bg-accentYellow text-primaryBlue px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-400 transition-colors shadow-lg text-base sm:text-lg">
-                  Free Consultation
+                  {t('navbar.freeConsultation') || 'Free Consultation'}
                 </button>
               </div>
 
