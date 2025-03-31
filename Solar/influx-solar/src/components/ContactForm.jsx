@@ -55,7 +55,6 @@ const ContactForm = () => {
           message: '',
         });
         
-        // Reset success message after 5 seconds
         setTimeout(() => {
           setStatus({ submitting: false, success: false, error: false });
           setStatusMessage('');
@@ -67,7 +66,6 @@ const ContactForm = () => {
       setStatus({ submitting: false, success: false, error: true });
       setStatusMessage(error.message || t('contact.form.error'));
       
-      // Reset error message after 5 seconds
       setTimeout(() => {
         setStatus({ submitting: false, success: false, error: false });
         setStatusMessage('');
@@ -116,8 +114,133 @@ const ContactForm = () => {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-            {/* Form fields remain the same as your original */}
-            {/* ... (all your existing form fields) ... */}
+            {/* Name Field */}
+            <div className="space-y-1">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                {t('contact.form.name')}
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FaUser className="text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="block w-full pl-10 pr-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primaryBlue focus:border-primaryBlue transition-all"
+                  placeholder={t('Your name')}
+                />
+              </div>
+            </div>
+
+            {/* Email Field */}
+            <div className="space-y-1">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                {t('contact.form.email')}
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FaEnvelope className="text-gray-400" />
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="block w-full pl-10 pr-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primaryBlue focus:border-primaryBlue transition-all"
+                  placeholder={t('email')}
+                />
+              </div>
+            </div>
+
+            {/* Phone Field */}
+            <div className="space-y-1">
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                {t('contact.form.phone')}
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FaPhone className="text-gray-400" />
+                </div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="block w-full pl-10 pr-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primaryBlue focus:border-primaryBlue transition-all"
+                  placeholder={t('phone')}
+                />
+              </div>
+            </div>
+
+            {/* Address Field */}
+            <div className="space-y-1">
+              <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+                {t('contact.form.address')}
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FaMapMarkerAlt className="text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
+                  className="block w-full pl-10 pr-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primaryBlue focus:border-primaryBlue transition-all"
+                  placeholder={t('address')}
+                />
+              </div>
+            </div>
+
+            {/* Installation Type */}
+            <div className="space-y-1">
+              <label htmlFor="installationType" className="block text-sm font-medium text-gray-700">
+                {t('contact.form.installationType')}
+              </label>
+              <select
+                id="installationType"
+                name="installationType"
+                value={formData.installationType}
+                onChange={handleChange}
+                className="block w-full pl-3 pr-10 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primaryBlue focus:border-primaryBlue transition-all"
+              >
+                <option value="residential">{t('contact.form.residential')}</option>
+                <option value="commercial">{t('contact.form.commercial')}</option>
+                <option value="industrial">{t('Industrial')}</option>
+                <option value="agricultural">{t('Agricultural')}</option>
+              </select>
+            </div>
+
+            {/* Message Field */}
+            <div className="space-y-1">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                {t('contact.form.message')}
+              </label>
+              <div className="relative">
+                <div className="absolute top-3 left-3">
+                  <FaComment className="text-gray-400" />
+                </div>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="block w-full pl-10 pr-3 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primaryBlue focus:border-primaryBlue transition-all"
+                  placeholder={t('Message')}
+                ></textarea>
+              </div>
+            </div>
 
             {/* Submit Button */}
             <button

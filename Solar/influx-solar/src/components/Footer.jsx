@@ -254,7 +254,7 @@ const Footer = () => {
               <span>by</span>
             </p>
             <a
-              href="https://harit.tech"
+              href="https://harittech.in"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 group"

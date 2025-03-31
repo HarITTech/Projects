@@ -87,7 +87,7 @@ const Contact = () => {
     {
       icon: <FaMapMarkerAlt className="text-2xl text-accentYellow" />,
       title: "Visit Us",
-      info: "Pune, Maharashtra"
+      info: "Head Office: Near Bus Stop, Seloo, Th. Seloo, Dist. Wardha – 442104"
     }
   ];
 

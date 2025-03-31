@@ -325,38 +325,39 @@ const Home = () => {
       <InstallationProcess steps={processSteps} />
 
       {/* Why Choose Us Section */}
-      <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 opacity-10">
+      {/* Why Choose Us Section */}
+      <section className="relative py-16 sm:py-20 md:py-24 lg:py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        {/* Decorative elements - moved behind content */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-1/4 -left-20 w-60 h-60 rounded-full bg-primaryBlue/20 filter blur-3xl animate-[float_12s_infinite]"></div>
           <div className="absolute bottom-1/3 -right-20 w-80 h-80 rounded-full bg-secondaryGreen/20 filter blur-3xl animate-[float_15s_infinite]"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20 lg:mb-24">
-            <div className="inline-flex items-center bg-primaryBlue/5 px-6 py-2 rounded-full mb-6">
-              <span className="text-sm font-semibold text-primaryBlue uppercase tracking-wider">
+          {/* Section Header - improved spacing and responsive text */}
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20">
+            <div className="inline-flex items-center bg-primaryBlue/10 px-4 py-1.5 sm:px-6 sm:py-2 rounded-full mb-4 sm:mb-6">
+              <span className="text-xs sm:text-sm font-semibold text-primaryBlue uppercase tracking-wider">
                 Our Advantages
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primaryBlue mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primaryBlue mb-4">
               Why Choose{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondaryGreen to-accentYellow">
                 Influx Solar?
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-darkGray/90">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Discover the difference that comes with working with solar energy
               experts
             </p>
           </div>
 
-          {/* Benefits Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          {/* Benefits Grid - improved responsive behavior */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 ">
             {[
               {
-                icon: <FaSolarPanel className="text-3xl" />,
+                icon: <FaSolarPanel className="text-2xl sm:text-3xl" />,
                 title: "Premium Solar Panels",
                 description:
                   "We use top-tier solar panels from industry leaders like Adani, Waaree, and Polycab with 25-year performance warranties",
@@ -364,7 +365,7 @@ const Home = () => {
                 stats: "22-24% Efficiency",
               },
               {
-                icon: <FaMoneyBillWave className="text-3xl" />,
+                icon: <FaMoneyBillWave className="text-2xl sm:text-3xl" />,
                 title: "Significant Savings",
                 description:
                   "Clients save 80-90% on electricity bills with ROI in 3-5 years through our optimized solar solutions",
@@ -372,7 +373,7 @@ const Home = () => {
                 stats: "90% Savings",
               },
               {
-                icon: <FaUsers className="text-3xl" />,
+                icon: <FaUsers className="text-2xl sm:text-3xl" />,
                 title: "Certified Experts",
                 description:
                   "Our MNRE-certified team handles everything from consultation to maintenance with 500+ successful installations",
@@ -382,43 +383,43 @@ const Home = () => {
             ].map((benefit, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100"
+                className="group relative bg-white rounded-2xl sm:rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 hover:border-gray-200"
               >
                 {/* Animated shine effect */}
-                <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
                   <div className="absolute -inset-y-full -inset-x-20 bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shine_1.5s_forwards]"></div>
                 </div>
 
-                {/* Floating icon */}
+                {/* Floating icon - improved positioning */}
                 <div
-                  className={`absolute -top-6 left-1/2 transform -translate-x-1/2 ${benefit.color} text-white rounded-full p-4 mt-8 shadow-lg z-10 group-hover:scale-110 transition-transform duration-300`}
+                  className={`absolute -top-5 sm:-top-6 left-1/2 transform -translate-x-1/2 ${benefit.color} text-white rounded-full p-3 sm:p-4 shadow-md group-hover:scale-105 transition-transform duration-300`}
                 >
                   {benefit.icon}
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 p-8 md:p-10 lg:pt-20 h-full ">
-                  <h3 className="text-xl md:text-2xl font-bold text-center text-primaryBlue mb-4">
+                {/* Content - improved padding and spacing */}
+                <div className="pt-16 pb-8 px-6 sm:px-8 lg:pt-20 lg:px-10 lg:pb-10">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-center text-primaryBlue mb-3 sm:mb-4">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 text-center mb-6">
+                  <p className="text-gray-600 text-sm sm:text-base text-center mb-4 sm:mb-6">
                     {benefit.description}
                   </p>
-                  <div className="mt-6 text-center">
-                    <span className="inline-block px-4 py-2 bg-gray-100 rounded-full text-sm font-medium text-gray-800 group-hover:bg-gray-200 transition-colors">
+                  <div className="text-center">
+                    <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-50 rounded-full text-xs sm:text-sm font-medium text-gray-800 group-hover:bg-gray-100 transition-colors">
                       {benefit.stats}
                     </span>
                   </div>
-
-                  {/* Animated border bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gray-200 to-transparent group-hover:via-current transition-all duration-500"></div>
                 </div>
+
+                {/* Animated border bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gray-200 to-transparent group-hover:via-current transition-all duration-300"></div>
               </div>
             ))}
           </div>
 
-          {/* Trust badges */}
-          <div className="mt-16 md:mt-20 flex flex-wrap justify-center items-center gap-6 md:gap-10">
+          {/* Trust badges - improved responsive behavior */}
+          <div className="mt-12 sm:mt-16 md:mt-20 flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8">
             {[
               "MNRE Certified",
               "ISO 9001:2015",
@@ -427,10 +428,10 @@ const Home = () => {
             ].map((badge, index) => (
               <div
                 key={index}
-                className="flex items-center bg-white px-5 py-3 rounded-full shadow-sm border border-gray-200"
+                className="flex items-center bg-white px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-3 rounded-full shadow-xs sm:shadow-sm border border-gray-100 hover:border-gray-200 transition-colors"
               >
-                <FaCheckCircle className="text-green-500 mr-2" />
-                <span className="text-sm md:text-base font-medium text-gray-700">
+                <FaCheckCircle className="text-green-500 text-sm sm:text-base mr-1.5 sm:mr-2" />
+                <span className="text-xs sm:text-sm md:text-base font-medium text-gray-700">
                   {badge}
                 </span>
               </div>
@@ -458,58 +459,93 @@ const Home = () => {
       </section>
 
       {/* Trusted Brands Section */}
-      <section className="py-16 bg-gray-50 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primaryBlue">
+      <section className="py-16 md:py-20 lg:py-24 bg-gray-50 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
+          {/* Section Header */}
+          <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+            <div className="inline-flex items-center bg-primaryBlue/10 px-4 py-1.5 rounded-full mb-4">
+              <span className="text-xs sm:text-sm font-semibold text-primaryBlue uppercase tracking-wider">
+                Trusted Partners
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primaryBlue mb-4">
               {t("home.brands")}
             </h2>
-            <div className="w-20 h-1 bg-primaryBlue mx-auto mt-4"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-primaryBlue to-secondaryGreen rounded-full mx-auto"></div>
           </div>
 
+          {/* Brands Marquee */}
           <div className="relative">
-            {/* Gradient overlays for better UX */}
-            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
-            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
+            {/* Gradient overlays - improved visibility */}
+            <div className="absolute inset-y-0 left-0 w-24 md:w-32 bg-gradient-to-r from-gray-50 via-gray-50/90 to-transparent z-10"></div>
+            <div className="absolute inset-y-0 right-0 w-24 md:w-32 bg-gradient-to-l from-gray-50 via-gray-50/90 to-transparent z-10"></div>
 
-            {/* Infinite sliding animation */}
-            <div className="flex items-center overflow-hidden">
-              <div className="flex animate-infinite-scroll space-x-16 px-4">
-                {[adani, waree, poly, adani, waree, poly].map(
-                  (brand, index) => (
-                    <div
-                      key={index}
-                      className="flex-shrink-0 flex items-center justify-center"
-                    >
+            {/* Marquee Container */}
+            <div className="flex items-center overflow-hidden py-4">
+              {/* First Marquee Set */}
+              <div className="flex animate-infinite-scroll whitespace-nowrap">
+                {[adani, waree, poly].map((brand, index) => (
+                  <div
+                    key={index}
+                    className="inline-flex items-center justify-center mx-8 md:mx-12 lg:mx-16 px-2"
+                  >
+                    <div className="relative group">
                       <img
                         src={brand}
                         alt={`Brand ${index}`}
-                        className="h-16 md:h-20 lg:h-24 object-contain grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105"
+                        className="h-14 sm:h-16 md:h-20 lg:h-24 object-contain opacity-80 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-110"
                       />
+                      {/* Subtle glow effect on hover */}
+                      <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 bg-primaryBlue/10 blur-md -z-10 transition-opacity duration-500"></div>
                     </div>
-                  )
-                )}
+                  </div>
+                ))}
               </div>
+
               {/* Duplicate for seamless looping */}
-              <div className="flex animate-infinite-scroll space-x-16 px-4">
-                {[adani, waree, poly, adani, waree, poly].map(
-                  (brand, index) => (
-                    <div
-                      key={`dup-${index}`}
-                      className="flex-shrink-0 flex items-center justify-center"
-                    >
+              <div
+                className="flex animate-infinite-scroll whitespace-nowrap"
+                aria-hidden="true"
+              >
+                {[adani, waree, poly].map((brand, index) => (
+                  <div
+                    key={`dup-${index}`}
+                    className="inline-flex items-center justify-center mx-8 md:mx-12 lg:mx-16 px-2"
+                  >
+                    <div className="relative group">
                       <img
                         src={brand}
-                        alt={`Brand ${index}`}
-                        className="h-16 md:h-20 lg:h-24 object-contain grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105"
+                        alt=""
+                        className="h-14 sm:h-16 md:h-20 lg:h-24 object-contain opacity-80 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-110"
                       />
+                      <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 bg-primaryBlue/10 blur-md -z-10 transition-opacity duration-500"></div>
                     </div>
-                  )
-                )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
+
+        {/* Animation Styles */}
+        <style jsx>{`
+          @keyframes infinite-scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          .animate-infinite-scroll {
+            display: flex;
+            width: fit-content;
+            animation: infinite-scroll 30s linear infinite;
+          }
+          .animate-infinite-scroll:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
       </section>
 
       <Custumer />
