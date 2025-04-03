@@ -4,7 +4,7 @@ import { FaLinkedin, FaTwitter, FaQuoteLeft } from 'react-icons/fa';
 
 const Team = () => {
   const founder = {
-    name: "Er. Shankar Dandekar",
+    name: "Er. Kishor Dhore",
     role: "Founder & CEO",
     bio: "Solar industry veteran with 15+ years of experience in renewable energy solutions. Passionate about making sustainable energy accessible to all.",
     social: {

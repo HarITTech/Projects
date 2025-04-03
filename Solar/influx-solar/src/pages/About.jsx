@@ -125,7 +125,7 @@ const features = [
 // Founder profile
 const founder = {
   id: 1,
-  name: "Er. Shankar Dandekar",
+  name: "Er. Kishor Dhore",
   role: "Founder & CEO",
   image: "https://storage.googleapis.com/a1aa/image/8bs4PKQUX0aLaNbPsu8adm9Yv3a3NKhPXUpHJzI1iLY.jpg",
   bio: "With over 15 years in renewable energy, Shankar founded our company with a vision to make solar energy accessible to all. His technical expertise and leadership drive our innovation in solar technology.",

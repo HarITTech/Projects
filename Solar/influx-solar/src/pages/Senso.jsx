@@ -6,24 +6,51 @@ import { BsFillPauseCircleFill, BsFillPlayCircleFill } from 'react-icons/bs';
 
 // Sample images - replace with your actual images
 const memories = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80', caption: 'Our first date' },
-  { id: 2, src: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80', caption: 'Beach sunset' },
-  { id: 3, src: 'https://images.unsplash.com/photo-1494774157365-9e04c6720e47?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80', caption: 'Your beautiful smile' },
-  { id: 4, src: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80', caption: 'Special moments' },
+  { 
+    id: 1, 
+    src: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80', 
+    caption: 'Our love story begins...' 
+  },
+  { 
+    id: 2, 
+    src: 'https://images.unsplash.com/photo-1559769732-3a943df124b0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+    caption: 'Special moments with you' 
+  },
+  { 
+    id: 3, 
+    src: 'https://images.unsplash.com/photo-1629495025620-26d5f4ada7c2?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+    caption: 'Your beautiful smile' 
+  },
+  { 
+    id: 4, 
+    src: 'https://plus.unsplash.com/premium_vector-1727278874720-f5a8f2246190?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+    caption: 'My heart belongs to you' 
+  },
+  { 
+    id: 5, 
+    src: 'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80', 
+    caption: 'Forever in your eyes' 
+  },
+  { 
+    id: 6, 
+    src: 'https://images.unsplash.com/photo-1559769732-3a943df124b0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+    caption: 'Our special connection' 
+  }
 ];
 
 const Senso = () => {
   const [showConfetti, setShowConfetti] = useState(true);
   const [hearts, setHearts] = useState([]);
   const [balloons, setBalloons] = useState([]);
+  const [stars, setStars] = useState([]); // Added stars from old page
   const [currentNickname, setCurrentNickname] = useState(0);
   const [showContent, setShowContent] = useState(false);
   const [currentMemory, setCurrentMemory] = useState(0);
-  const [isMusicPlaying, setIsMusicPlaying] = useState(true); // Music starts automatically
+  const [isMusicPlaying, setIsMusicPlaying] = useState(true);
   const [showLetter, setShowLetter] = useState(false);
   const audioRef = useRef(null);
 
-  const nicknames = ["Suhani", "Susu", "Rani", "Maharani", "My Love", "My Queen"];
+  const nicknames = ["Suhani", "Susu", "Rani", "My Maharani", "My Love", "My Queen", "My Angel"]; // Added "My Angel" from old page
   const reasons = [
     "Your beautiful smile that lights up my entire world",
     "The way you make my heart skip a beat with just a glance",
@@ -32,7 +59,9 @@ const Senso = () => {
     "Your strength that inspires me to be a better man",
     "The magic you bring to every moment we share",
     "Your laughter that’s sweeter than any song",
-    "The way you make me feel so loved and understood"
+    "The way you make me feel so loved and understood",
+    "Your grace that turns every day into a fairy tale", // Added from old page
+    "Your warmth that feels like home" // Added from old page
   ];
 
   const birthdayWishes = [
@@ -40,7 +69,52 @@ const Senso = () => {
     "Wishing you a day as perfect as you are, my darling!",
     "May every star in the sky shine just for you today!",
     "Here’s to a year of dreams coming true and endless happiness!",
-    "May you always know how precious you are to me!"
+    "May you always know how precious you are to me!",
+    "Wishing you endless adventures and infinite love!" // Added from old page
+  ];
+
+  // Special moments section with romantic illustrations
+const specialMoments = [
+  {
+    id: 1,
+    src: 'https://images.unsplash.com/photo-1513279922550-250c2129b13a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Your Sweetest Behaviour',
+    description: 'The day my heart knew you were special'
+  },
+  {
+    id: 2,
+    src: 'https://images.unsplash.com/photo-1616863496857-01ffd220265e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Your Laughter',
+    description: 'The most beautiful sound in my world'
+  },
+  {
+    id: 3,
+    src: 'https://images.unsplash.com/reserve/165aTVpzTXGMXu1azUdy_IMG_8468.JPG?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Late Night Talks',
+    description: 'When time stands still with you'
+  },
+  {
+    id: 4,
+    src: 'https://images.unsplash.com/photo-1741247842040-c1a7c27b219f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Your Comfort',
+    description: 'Where I find my peace'
+  }
+];
+
+  const favoriteMoments = [ // Added from old page
+    "Our first RP With my Awesome Wife",
+    "Every night, when you are over me.",
+    "Watching you laugh at my silly jokes",
+    "Our late-night talks about everything and nothing",
+    "The day you said 'I love you' first"
+  ];
+
+  const promises = [ // Added from old page
+    "To always be your biggest supporter",
+    "To make you smile every single day",
+    "To hold your hand through every storm",
+    "To cherish you more with each passing year",
+    "To build a future filled with our dreams"
   ];
 
   // Floating hearts effect
@@ -66,6 +140,18 @@ const Senso = () => {
     }, 1000);
     return () => clearInterval(balloonInterval);
   }, [balloons.length]);
+
+  // Twinkling stars effect (adjusted from old page to match new page)
+  useEffect(() => {
+    const starInterval = setInterval(() => {
+      setStars(prev => [
+        ...prev,
+        { id: Date.now(), x: Math.random() * 100, y: Math.random() * 100, size: Math.random() * 10 + 5 }
+      ]);
+      if (stars.length > 40) setStars(prev => prev.slice(1));
+    }, 500);
+    return () => clearInterval(starInterval);
+  }, [stars.length]);
 
   // Rotate memories
   useEffect(() => {
@@ -138,24 +224,22 @@ const Senso = () => {
         </motion.div>
       ))}
 
-      {/* Sparkling Stars */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-        {Array.from({ length: 60 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-yellow-300"
-            style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, fontSize: `${Math.random() * 10 + 5}px` }}
-            animate={{ opacity: [0, 1, 0], scale: [0.8, 1.2, 0.8] }}
-            transition={{ duration: Math.random() * 2 + 1, repeat: Infinity, delay: Math.random() * 5 }}
-          >
-            ✧
-          </motion.div>
-        ))}
-      </div>
+      {/* Twinkling Stars */}
+      {stars.map(star => (
+        <motion.div
+          key={star.id}
+          className="absolute text-yellow-300 z-10 drop-shadow-sm"
+          style={{ left: `${star.x}%`, top: `${star.y}%`, fontSize: `${star.size}px` }}
+          animate={{ opacity: [0, 1, 0], scale: [0.8, 1.2, 0.8] }}
+          transition={{ duration: Math.random() * 2 + 1, repeat: Infinity, ease: "easeInOut" }}
+        >
+          ✧
+        </motion.div>
+      ))}
 
       {/* Music Player */}
       <audio ref={audioRef} autoPlay loop>
-        <source src={song} type="audio/mp3" /> {/* Ensure this is an .mp3 file */}
+        <source src={song} type="audio/mp3" />
       </audio>
 
       {/* Main Content */}
@@ -210,29 +294,71 @@ const Senso = () => {
             <span className="text-4xl">🎁</span>
             <span className="text-4xl">🎉</span>
             <span className="text-4xl">💝</span>
+            <span className="text-4xl">🎀</span> {/* Added from old page */}
           </motion.div>
         </div>
 
-        {/* Memory Gallery */}
+        {/* Memory Gallery - Updated with romantic images */}
         <motion.div 
-          className="flex justify-center mb-12 relative h-80"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
+          className="flex justify-center mb-10 relative h-64"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
         >
           {memories.map((memory, index) => (
             <motion.div
               key={memory.id}
-              className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${index === currentMemory ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+              className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ${index === currentMemory ? 'opacity-100' : 'opacity-0'}`}
             >
-              <div className="relative w-72 h-72 rounded-3xl overflow-hidden shadow-2xl border-2 border-pink-300/50">
-                <img src={memory.src} alt={memory.caption} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                  <p className="text-white font-bold text-xl drop-shadow-md">{memory.caption}</p>
+              <div className="relative w-56 h-56 rounded-2xl overflow-hidden shadow-lg border-2 border-pink-200/70">
+                <img 
+                  src={memory.src} 
+                  alt={memory.caption}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                  <p className="text-white font-medium text-shadow">{memory.caption}</p>
                 </div>
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Special Moments Section - New romantic section */}
+        <motion.div 
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+        >
+          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            Moments That Stole My Heart
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {specialMoments.map((moment) => (
+              <motion.div
+                key={moment.id}
+                className="bg-gradient-to-br from-pink-50 to-purple-50 p-5 rounded-xl border border-pink-200/50 shadow-md hover:shadow-lg transition-all"
+                whileHover={{ scale: 1.03 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="relative h-40 rounded-lg overflow-hidden mb-3">
+                  <img 
+                    src={moment.src} 
+                    alt={moment.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </div>
+                <h3 className="text-xl font-bold text-pink-700">{moment.title}</h3>
+                <p className="text-pink-600">{moment.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Love Message */}
@@ -302,12 +428,39 @@ const Senso = () => {
           </div>
         </motion.div>
 
+        {/* Favorite Moments */}
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8 }}
+        >
+          <h2 className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-pink-700 to-purple-700 bg-clip-text text-transparent">
+            Our Favorite Moments Together
+          </h2>
+          <div className="space-y-4">
+            {favoriteMoments.map((moment, index) => (
+              <motion.div
+                key={index}
+                className="bg-gradient-to-br from-pink-50 to-purple-50 p-6 rounded-2xl shadow-lg border border-pink-400/50 flex items-center"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.1 + index * 0.2, duration: 0.6 }}
+                whileHover={{ scale: 1.03, boxShadow: "0 15px 30px -5px rgba(236, 72, 153, 0.3)" }}
+              >
+                <span className="text-2xl text-pink-600 mr-4">🌟</span>
+                <p className="text-xl text-pink-900">{moment}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Love Letter Reveal */}
         <motion.div 
           className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
         >
           <motion.button
             className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-10 py-4 rounded-full text-xl font-bold shadow-xl"
@@ -332,12 +485,12 @@ const Senso = () => {
                 💌
               </motion.div>
               <p className="text-2xl text-pink-900 italic leading-relaxed">
-                My Dearest Suhani [ Susu ],<br/><br/>
+                My Dearest Suhani [Susu],<br/><br/>
                 Today, as we celebrate you, I’m reminded how blessed I am to have you in my life. 
                 You’re my dream come true, my safe haven, and my greatest adventure. I promise to love you 
                 with every fiber of my being, to make you laugh, and to hold you close forever.<br/><br/>
                 Yours eternally,<br/>
-                Mahesh [ Coco ]
+                Mahesh [Coco]
               </p>
             </motion.div>
           )}
@@ -367,6 +520,41 @@ const Senso = () => {
           </div>
         </motion.div>
 
+        {/* Promises to You */}
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.8, duration: 0.8 }}
+        >
+          <h2 className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-pink-700 to-purple-700 bg-clip-text text-transparent">
+            My Promises to You
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {promises.map((promise, index) => (
+              <motion.div
+                key={index}
+                className="bg-gradient-to-br from-pink-50 to-purple-50 p-6 rounded-2xl border border-pink-400/50 shadow-lg hover:shadow-2xl transition-all duration-300"
+                whileHover={{ scale: 1.05, rotate: 1, boxShadow: "0 20px 40px -5px rgba(236, 72, 153, 0.4)" }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.9 + index * 0.1 }}
+              >
+                <p className="text-xl text-pink-900 flex items-start">
+                  <motion.span 
+                    className="text-3xl text-purple-600 mr-4"
+                    animate={{ scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    💞
+                  </motion.span>
+                  {promise}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Final Message */}
         <motion.div 
           className="text-center"
@@ -375,7 +563,7 @@ const Senso = () => {
           transition={{ delay: 2, duration: 0.8 }}
         >
           <p className="text-5xl font-bold text-pink-800 mb-6">Forever Yours, My Love,</p>
-          <p className="text-4xl text-pink-900 font-semibold">Mahesh</p>
+          <p className="text-4xl text-pink-900 font-semibold">Mahesh [Coco]</p> {/* Updated with [Coco] from old page */}
           <motion.div 
             className="mt-10 text-8xl"
             animate={{ scale: [1, 1.4, 1], rotate: [0, 15, -15, 0], color: ['#ff6b6b', '#ff9ff3', '#ff6b6b'] }}
