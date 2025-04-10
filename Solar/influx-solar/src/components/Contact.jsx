@@ -1,45 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaSpinner, FaCheck, FaExclamationTriangle } from 'react-icons/fa';
-import bgImage from '../assets/3.png';
+import React, { useState, useEffect } from "react";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPaperPlane,
+  FaSpinner,
+  FaCheck,
+  FaExclamationTriangle,
+} from "react-icons/fa";
+import bgImage from "../assets/3.png";
 
 const Contact = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
-  const [status, setStatus] = useState({ submitting: false, success: false, error: false });
-  const [statusMessage, setStatusMessage] = useState('');
+  const [status, setStatus] = useState({
+    submitting: false,
+    success: false,
+    error: false,
+  });
+  const [statusMessage, setStatusMessage] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ submitting: true, success: false, error: false });
-    setStatusMessage('');
+    setStatusMessage("");
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: 'fef839bc-9dce-445b-b477-cf6fb3274cf1',
+          access_key: "fef839bc-9dce-445b-b477-cf6fb3274cf1",
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -50,23 +62,27 @@ const Contact = () => {
 
       if (result.success) {
         setStatus({ submitting: false, success: true, error: false });
-        setStatusMessage('Thank you for your message! We will contact you soon.');
-        setFormData({ name: '', email: '', message: '' });
-        
+        setStatusMessage(
+          "Thank you for your message! We will contact you soon."
+        );
+        setFormData({ name: "", email: "", message: "" });
+
         setTimeout(() => {
           setStatus({ submitting: false, success: false, error: false });
-          setStatusMessage('');
+          setStatusMessage("");
         }, 5000);
       } else {
-        throw new Error(result.message || 'Submission failed');
+        throw new Error(result.message || "Submission failed");
       }
     } catch (error) {
       setStatus({ submitting: false, success: false, error: true });
-      setStatusMessage(error.message || 'Failed to send message. Please try again.');
-      
+      setStatusMessage(
+        error.message || "Failed to send message. Please try again."
+      );
+
       setTimeout(() => {
         setStatus({ submitting: false, success: false, error: false });
-        setStatusMessage('');
+        setStatusMessage("");
       }, 5000);
     }
   };
@@ -76,19 +92,19 @@ const Contact = () => {
       icon: <FaPhone className="text-2xl text-accentYellow" />,
       title: "Call Us",
       info: "+91 9890888138",
-      link: "tel:+919890888138"
+      link: "tel:+919890888138",
     },
     {
       icon: <FaEnvelope className="text-2xl text-accentYellow" />,
       title: "Email Us",
       info: "info@influxsolar.com",
-      link: "mailto:info@influxsolar.com"
+      link: "mailto:info@influxsolar.com",
     },
     {
       icon: <FaMapMarkerAlt className="text-2xl text-accentYellow" />,
       title: "Visit Us",
-      info: "Head Office: Near Bus Stop, Seloo, Th. Seloo, Dist. Wardha – 442104"
-    }
+      info: "Head Office: Near Bus Stop, Seloo, Th. Seloo, Dist. Wardha – 442104",
+    },
   ];
 
   return (
@@ -106,7 +122,8 @@ const Contact = () => {
             Reach Out & <span className="text-accentYellow">Connect</span>
           </h2>
           <p className="text-xl text-white/90">
-            Have questions about solar solutions? Our team is ready to assist you.
+            Have questions about solar solutions? Our team is ready to assist
+            you.
           </p>
         </div>
 
@@ -114,18 +131,23 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="lg:w-1/3">
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-              
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Contact Information
+              </h3>
+
               <div className="space-y-6">
                 {contactMethods.map((method, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      {method.icon}
-                    </div>
+                    <div className="flex-shrink-0">{method.icon}</div>
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">{method.title}</h4>
+                      <h4 className="text-lg font-semibold text-white mb-1">
+                        {method.title}
+                      </h4>
                       {method.link ? (
-                        <a href={method.link} className="text-white/80 hover:text-accentYellow transition-colors">
+                        <a
+                          href={method.link}
+                          className="text-white/80 hover:text-accentYellow transition-colors"
+                        >
                           {method.info}
                         </a>
                       ) : (
@@ -138,13 +160,16 @@ const Contact = () => {
 
               {/* Image - Hidden on mobile */}
               {!isMobile && (
-                <div className="mt-10">
-                  <img
-                    alt="Solar installation"
-                    className="w-full h-auto rounded-xl shadow-lg"
-                    src={bgImage}
+                <div className="mt-10  border-gray-400 border-[2px]">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d466.10773787123753!2d78.70764559074962!3d20.83728227296911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd486ddea4dd4cd%3A0xd3fb64b471858ece!2sSeloo!5e0!3m2!1sen!2sin!4v1744262639366!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
                     loading="lazy"
-                  />
+                    className="w-full h-full"
+                  ></iframe>
                 </div>
               )}
             </div>
@@ -152,12 +177,23 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:w-2/3">
-            <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
-              
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20"
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Send Us a Message
+              </h3>
+
               {/* Status Message */}
               {(status.success || status.error) && (
-                <div className={`mb-6 p-4 rounded-lg ${status.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                <div
+                  className={`mb-6 p-4 rounded-lg ${
+                    status.success
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
                   <div className="flex items-center space-x-2">
                     {status.success ? (
                       <FaCheck className="text-green-600" />
@@ -171,7 +207,9 @@ const Contact = () => {
 
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-white mb-2">Your Name</label>
+                  <label htmlFor="name" className="block text-white mb-2">
+                    Your Name
+                  </label>
                   <input
                     id="name"
                     type="text"
@@ -182,9 +220,11 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="email" className="block text-white mb-2">Email Address</label>
+                  <label htmlFor="email" className="block text-white mb-2">
+                    Email Address
+                  </label>
                   <input
                     id="email"
                     type="email"
@@ -195,9 +235,11 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="message" className="block text-white mb-2">Your Message</label>
+                  <label htmlFor="message" className="block text-white mb-2">
+                    Your Message
+                  </label>
                   <textarea
                     id="message"
                     rows="5"
@@ -208,12 +250,14 @@ const Contact = () => {
                     required
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
                   disabled={status.submitting}
                   className={`w-full md:w-auto px-8 py-4 bg-accentYellow text-primaryBlue font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 ${
-                    status.submitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-yellow-400'
+                    status.submitting
+                      ? "opacity-70 cursor-not-allowed"
+                      : "hover:bg-yellow-400"
                   }`}
                 >
                   {status.submitting ? (
