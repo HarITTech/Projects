@@ -46,20 +46,20 @@ const Contact = () => {
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-accentYellow text-lg sm:text-xl" />
-                <a href="tel:+919890888138" className="text-sm sm:text-base md:text-lg hover:text-white/80 transition-colors duration-300">
-                  +91 9890 888 138
+                <a href="tel:+918007685547" className="text-sm sm:text-base md:text-lg hover:text-white/80 transition-colors duration-300">
+                  +91 8007685547
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-accentYellow text-lg sm:text-xl" />
-                <a href="mailto:info@solarcompany.com" className="text-sm sm:text-base md:text-lg hover:text-white/80 transition-colors duration-300">
-                  info@solarcompany.com
+                <a href="mailto:influxsolarwardhaseloo@gmail.com" className="text-sm sm:text-base md:text-lg hover:text-white/80 transition-colors duration-300">
+                influxsolarwardhaseloo@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <FaWhatsapp className="text-accentYellow text-lg sm:text-xl" />
                 <a
-                  href="https://wa.me/9890888138"
+                  href="https://wa.me/8007685547"
                   className="text-sm sm:text-base md:text-lg hover:text-white/80 transition-colors duration-300"
                 >
                   {t('contact.whatsapp')}
@@ -84,7 +84,7 @@ const Contact = () => {
                 123 Solar Street, Green Energy City, Maharashtra, India 440001
               </p>
               <a
-                href="https://wa.me/9890888138"
+                href="https://wa.me/8007685547"
                 className="inline-flex items-center space-x-2 bg-accentYellow text-darkGray py-2 px-4 sm:py-3 sm:px-6 rounded-full text-sm sm:text-base md:text-lg font-semibold hover:bg-white hover:text-primaryBlue transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <FaWhatsapp />

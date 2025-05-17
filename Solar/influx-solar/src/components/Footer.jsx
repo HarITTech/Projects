@@ -163,10 +163,10 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-accentYellow" />
                 <a
-                  href="mailto:info@influxsolar.com"
+                  href="mailto:influxsolarwardhaseloo@gmail.com"
                   className="hover:text-accentYellow transition-colors"
                 >
-                  info@influxsolar.com
+                  influxsolarwardhaseloo@gmail.com
                 </a>
               </div>
             </div>
