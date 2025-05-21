@@ -120,6 +120,7 @@ const Footer = () => {
                   <span>{t("navbar.contact")}</span>
                 </Link>
               </li>
+            
             </ul>
           </div>
 

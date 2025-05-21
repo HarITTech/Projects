@@ -10,6 +10,8 @@ import Contact from './pages/Contact';
 import ProjectDetails from './pages/ProjectDetails';
 import PageNotFound from './pages/PageNotFound';
 import { FaArrowUp } from 'react-icons/fa';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -86,6 +88,8 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<Terms />} />
               <Route path="/projects/:id" element={<ProjectDetails />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
